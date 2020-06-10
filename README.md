@@ -1,3 +1,8 @@
+Project details:
+1.) Create a simple login page.
+2.) Redirect to a home page if credentials are correct.
+3.) If they are wrong, stay on login page and show error.
+
 # Login
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
