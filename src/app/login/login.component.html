@@ -1,15 +1,31 @@
-<form [formGroup]="formGroup" (ngSubmit)="submit()">
-  <label>User name: </label>
-  <input type="text" name="userName" formControlName="userName"/>
+<div class="container-fluid box" style="padding-top: 10rem">
+  <form [formGroup]="formGroup" (ngSubmit)="submit()">
+    <div class="row justify-content-center">
+      <h2>Login</h2>
+    </div>
+    <div class="row">
+      <label>User name: </label>
+      <input type="text" name="userName" formControlName="userName" class="form-control"/>
+    </div>
+    <br>
+    <div class="row">
+      <label>Password: </label>
+    </div>
+    <div class="row">
+      <input type="password" maxlength="6" name="password" formControlName="password" class="form-control"/>
+    </div>
+    <br>
+    <label *ngIf="error" class="input-error-message">
+      Please provide the right username and password.
+    </label>
+    <div class="row justify-content-center">
+      <button class="action-button">
+        Login
+      </button>
+    </div>
 
-  <label>Password: </label>
-  <input type="password" maxlength="6" name="password" formControlName="password"/>
-
-  <label *ngIf="error">
-    Please provide the right username and password.
-  </label>
-  <button>
-    Login
-  </button>
-
-</form>
+    <div class="row">
+      <div class="psw"><a href="#">Forgot password?</a></div>
+    </div>
+  </form>
+</div>
