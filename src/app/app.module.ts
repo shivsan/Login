@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {StorageService} from "./services/storage.service";
 import {AuthGuard} from "./guards/auth.guard";
 import {RouterModule} from "@angular/router";
@@ -20,7 +20,8 @@ import {RouterModule} from "@angular/router";
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   providers: [StorageService, AuthGuard],
   bootstrap: [AppComponent]

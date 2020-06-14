@@ -8,13 +8,10 @@ import {HomeComponent} from "./home/home.component";
 
 const routes: Routes = [
   {
-    path: '',
-    component: AppComponent,
-    children: [{
-      path: 'home',
+    path: 'home',
+    // component: AppComponent,
       canActivate: [AuthGuard],
       component: HomeComponent
-    }]
   },
   {
     path: 'login',

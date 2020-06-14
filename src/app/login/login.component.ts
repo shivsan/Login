@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
   public formGroup: FormGroup;
   public error: boolean = false;
 
-
   constructor(formBuilder: FormBuilder, private router: Router, private storageService: StorageService) {
     this.formGroup = formBuilder.group({
       userName: formBuilder.control(null, [Validators.required]),

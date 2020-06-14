@@ -3,7 +3,7 @@
   <input type="text" name="userName" formControlName="userName"/>
 
   <label>Password: </label>
-  <input type="text" name="password" formControlName="password"/>
+  <input type="password" maxlength="6" name="password" formControlName="password"/>
 
   <label *ngIf="error">
     Please provide the right username and password.
