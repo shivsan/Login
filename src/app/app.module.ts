@@ -9,12 +9,14 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {StorageService} from "./services/storage.service";
 import {AuthGuard} from "./guards/auth.guard";
 import {RouterModule} from "@angular/router";
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

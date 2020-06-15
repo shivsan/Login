@@ -8,11 +8,15 @@ export class AuthGuard implements CanActivate {
   constructor(private router: Router, private storageService: StorageService) {
   }
 
-  public async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
+  public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const isLoggedIn = this.storageService.getValue(Keys.LOGGED_IN) == 'true';
 
+    let result = false;
     if (!isLoggedIn)
-      await this.router.navigate(['/login'], {queryParams: {'redirectUrl': state.url}});
+      this.router.navigate(['/login'], {queryParams: {'redirectUrl': state.url}})
+        .then((res) => {
+          result = res;
+        });
 
     return isLoggedIn;
   }
