@@ -25,10 +25,14 @@ export class LoginComponentSpec {
   public async shouldLoginForRightCredentialsAndSaveStateToStorageAndRedirectToHome(): Promise<void> {
     // Arrange
     const formGroup = mock(FormGroup);
-    when(formGroup.get('userName')).thenReturn(new FormControl('admin'));
-    when(formGroup.get('password')).thenReturn(new FormControl('admin'));
+    const formControlUserName = new FormControl('admin');
+    const formControlPassword = new FormControl('admin');
+    when(formGroup.controls).thenReturn({
+      userName: formControlUserName,
+      password: formControlPassword
+    });
 
-    when(this.formBuilder.group(anything())).thenReturn(formGroup);
+    when(this.formBuilder.group(anything())).thenReturn(instance(formGroup));
     this.loginComponent = new LoginComponent(instance(this.formBuilder), instance(this.router), instance(this.storageService));
 
     // Act

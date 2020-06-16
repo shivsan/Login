@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
   }
 
   async submit(): Promise<void> {
-    const userName = this.formGroup.get('userName').value;
-    const password = this.formGroup.get('password').value;
+    const userName = this.formGroup.controls['userName'].value;
+    const password = this.formGroup.controls['password'].value;
 
     if (userName === 'admin' && password === 'admin') {
       this.storageService.setValue(Keys.LOGGED_IN, true);
