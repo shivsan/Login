@@ -3,6 +3,10 @@ Project details:
 2.) Redirect to a home page if credentials are correct.
 3.) If they are wrong, stay on login page and show error.
 
+
+For tests:
+1.) Run npm test to run all tests.
+
 # Login
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
